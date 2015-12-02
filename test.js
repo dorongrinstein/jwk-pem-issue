@@ -57,7 +57,7 @@ function validate(req, res) {
 function verifyJwt(theJwt, kid, cb) {
   
  function doVerify(theJwt, kid, cb) {
-    var key = publicKeys.keys[0].n;
+    var key = publicKeys.keys[0].x5c;
     if (process.argv[2] == '-pem') {
       key = rsapem(publicKeys.keys[0].n, publicKeys.keys[0].e);
     }
